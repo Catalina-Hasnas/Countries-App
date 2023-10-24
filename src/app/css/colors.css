@@ -1,0 +1,43 @@
+* {
+  /* Light theme */
+  --background-light: hsl(0, 0%, 98%);
+  --elements-light: hsl(0, 0%, 100%);
+  --text-light: hsl(200, 15%, 8%);
+
+  /* Dark theme */
+  --background-dark: hsl(207, 26%, 17%);
+  --elements-dark: hsl(209, 23%, 22%);
+  --text-dark: hsl(0, 0%, 100%);
+
+  --app-margin: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: var(--background-dark);
+    --elements: var(--elements-dark);
+    --text: var(--text-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: var(--background-light);
+    --elements: var(--elements-light);
+    --text: var(--text-light);
+  }
+}
+
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --elements: var(--elements-dark);
+  --text: var(--text-dark);
+}
+
+[data-theme="light"] {
+  --background: var(--background-light);
+  --elements: var(--elements-light);
+  --text: var(--text-light);
+}

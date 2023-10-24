@@ -1,0 +1,56 @@
+@import "colors.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 100%;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+button {
+  background-color: inherit;
+  color: inherit;
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .light {
+    display: none;
+  }
+
+  .dark {
+    display: unset;
+  }
+}
+
+[data-theme="dark"] .light {
+  display: none;
+}
+
+[data-theme="dark"] .dark {
+  display: unset;
+}
+
+[data-theme="light"] .light {
+  display: unset;
+}
+
+[data-theme="light"] .dark {
+  display: none;
+}

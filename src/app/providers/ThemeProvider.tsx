@@ -3,15 +3,17 @@
 import { ReactNode, useState, createContext, useContext } from "react";
 
 const ThemeContext = createContext({
-  isDarkTheme: false,
-  toggleIsDarkTheme: () => {},
+  toggleIsDarkTheme: (value: boolean) => {},
+  isDarkTheme: undefined as boolean | undefined,
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | undefined>(
+    undefined
+  );
 
-  const toggleIsDarkTheme = () => {
-    setIsDarkTheme((isDarkTheme) => !isDarkTheme);
+  const toggleIsDarkTheme = (value: boolean) => {
+    setIsDarkTheme(value);
   };
 
   return (

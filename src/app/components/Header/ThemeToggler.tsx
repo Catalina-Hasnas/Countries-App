@@ -1,13 +1,17 @@
 "use client";
 
-import { useThemeProvider } from "@/app/providers/ThemeProvider";
-import { useState } from "react";
+import { DarkThemeButton } from "./DarkThemeButton";
+import { LightThemeButton } from "./LightThemeButton";
 
 export const ThemeToggler = () => {
-  const { isDarkTheme, toggleIsDarkTheme } = useThemeProvider();
   return (
-    <button onClick={() => toggleIsDarkTheme()}>
-      {isDarkTheme ? "Light theme" : "Dark theme"}
-    </button>
+    <>
+      <div className="dark">
+        <DarkThemeButton />
+      </div>
+      <div className="light">
+        <LightThemeButton />
+      </div>
+    </>
   );
 };

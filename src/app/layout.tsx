@@ -3,17 +3,15 @@ import type { Metadata } from "next";
 import { Header } from "./components/Header";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { Body } from "./components/Body";
+import { ReactNode } from "react";
+import { FilteredResults } from "./components/FilteredResults";
 
 export const metadata: Metadata = {
   title: "Countries App",
   description: "Get information about countries",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <ThemeProvider>

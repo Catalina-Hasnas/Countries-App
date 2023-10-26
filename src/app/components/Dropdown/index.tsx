@@ -27,19 +27,19 @@ export const Dropdown = () => {
       {expanded ? (
         <ul className={`${styles.dropdownContent} appShadow`}>
           <li>
-            <Link href="/region/africa">Africa</Link>
+            <Link href="/countries/region/africa">Africa</Link>
           </li>
           <li>
-            <Link href="/region/america">America</Link>
+            <Link href="/countries/region/america">America</Link>
           </li>
           <li>
-            <Link href="/region/asia">Asia</Link>
+            <Link href="/countries/region/asia">Asia</Link>
           </li>
           <li>
-            <Link href="/region/europe">Europe</Link>
+            <Link href="/countries/region/europe">Europe</Link>
           </li>
           <li>
-            <Link href="/region/oceania">Oceania</Link>
+            <Link href="/countries/region/oceania">Oceania</Link>
           </li>
         </ul>
       ) : null}

@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+main {
+  margin-inline: var(--app-margin);
+}
+
 .appShadow {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
 }

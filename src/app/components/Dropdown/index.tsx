@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./dropdown.module.css";
 import { DropdownBarExpandIcon } from "./DropdownExpandIcon";
 import { DropdownBarCollapseIcon } from "./DropdownCollapseIcon";
+import Link from "next/link";
 
 export const Dropdown = () => {
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -26,19 +27,19 @@ export const Dropdown = () => {
       {expanded ? (
         <ul className={`${styles.dropdownContent} appShadow`}>
           <li>
-            <a href="#">Africa</a>
+            <Link href="/region/africa">Africa</Link>
           </li>
           <li>
-            <a href="#">America</a>
+            <Link href="/region/america">America</Link>
           </li>
           <li>
-            <a href="#">Asia</a>
+            <Link href="/region/asia">Asia</Link>
           </li>
           <li>
-            <a href="#">Europe</a>
+            <Link href="/region/europe">Europe</Link>
           </li>
           <li>
-            <a href="#">Oceania</a>
+            <Link href="/region/oceania">Oceania</Link>
           </li>
         </ul>
       ) : null}

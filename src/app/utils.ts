@@ -1,4 +1,4 @@
-interface CountryResponse {
+export interface CountryResponse {
   name: {
     common: string;
   };
@@ -26,7 +26,7 @@ export const mapCountriesResponse: mapCountriesResponseType = (countries) => {
   return countries.map((country) => ({
     name: country.name.common,
     flagSrc: country.flags.svg,
-    capital: country.capital[0],
+    capital: country.capital?.length ? country.capital[0] : "",
     population: country.population.toLocaleString("en-US"),
     region: country.region,
   }));

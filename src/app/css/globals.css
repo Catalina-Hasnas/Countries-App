@@ -12,17 +12,23 @@ body {
   min-height: 100vh;
   background-color: var(--background);
   color: var(--text);
+  fill: var(--fill);
 }
 
 button {
   background-color: inherit;
   color: inherit;
+  font-family: inherit;
   border: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.appShadow {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .dark {

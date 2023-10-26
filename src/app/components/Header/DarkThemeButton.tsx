@@ -1,3 +1,5 @@
+"use client";
+
 import { useThemeProvider } from "@/app/providers/ThemeProvider";
 import Image from "next/image";
 
@@ -11,7 +13,7 @@ export const DarkThemeButton = () => {
         toggleIsDarkTheme(false);
       }}
     >
-      <Image width={30} height={30} alt="sun" src="/sun-solid.svg" />
+      <Image width={15} height={15} alt="sun" src="/sun-solid.svg" />
       Light Mode
     </button>
   );

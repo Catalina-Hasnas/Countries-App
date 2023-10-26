@@ -9,7 +9,22 @@
   --elements-dark: hsl(209, 23%, 22%);
   --text-dark: hsl(0, 0%, 100%);
 
-  --app-margin: 3rem;
+  --app-margin-desktop: 4.5rem;
+  --app-margin-mobile: 1.5rem;
+
+  --app-border-radius: 0.3rem;
+
+  --text-gray: hsla(200, 15%, 8%, 0.7);
+}
+
+:root {
+  --app-margin: var(--app-margin-desktop);
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --app-margin: var(--app-margin-mobile);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +33,7 @@
     --background: var(--background-dark);
     --elements: var(--elements-dark);
     --text: var(--text-dark);
+    --fill: var(--text-dark);
   }
 }
 
@@ -27,6 +43,7 @@
     --background: var(--background-light);
     --elements: var(--elements-light);
     --text: var(--text-light);
+    --fill: var(--text-gray);
   }
 }
 
@@ -34,10 +51,12 @@
   --background: var(--background-dark);
   --elements: var(--elements-dark);
   --text: var(--text-dark);
+  --fill: var(--text-dark);
 }
 
 [data-theme="light"] {
   --background: var(--background-light);
   --elements: var(--elements-light);
   --text: var(--text-light);
+  --fill: var(--text-gray);
 }

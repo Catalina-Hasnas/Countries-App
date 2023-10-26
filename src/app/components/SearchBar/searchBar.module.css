@@ -1,0 +1,43 @@
+.searchBar {
+  position: relative;
+  flex-grow: 1;
+  max-width: 28rem;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 1.7em;
+  transform: translateY(-50%);
+}
+
+.searchBar input {
+  padding-block: 1.5em;
+  padding-inline: 5.7em;
+  border: none;
+  background-color: var(--elements);
+  border-radius: var(--app-border-radius);
+  min-width: 20rem;
+  color: inherit;
+  width: 100%;
+  font-family: inherit;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: var(--fill);
+  opacity: unset;
+}
+
+.searchBarIconColor {
+  fill: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchBar {
+    max-width: 18.75rem;
+  }
+}

@@ -1,8 +1,12 @@
+import { CountriesList } from "./components/CountriesList";
+import { Dropdown } from "./components/Dropdown";
+import { SearchBar } from "./components/SearchBar";
 import styles from "./page.module.css";
+import { mapCountriesResponse, sortAlphabeticallyByName } from "./utils";
 
 async function getCountries() {
   const res = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,capital,population,region"
+    "https://restcountries.com/v3.1/all?fields=name,capital,population,region,flags"
   );
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -12,10 +16,19 @@ async function getCountries() {
 }
 
 export default async function Home() {
-  // const countries = await getCountries();
+  const countries = await getCountries();
+
+  const mappedCountries = mapCountriesResponse(countries).sort((a, b) =>
+    sortAlphabeticallyByName(a, b)
+  );
+
   return (
     <main className={styles.main}>
-      <p> I am a child of main </p>
+      <div className={styles.filterResultsSection}>
+        <SearchBar />
+        <Dropdown />
+      </div>
+      <CountriesList countries={mappedCountries} />
     </main>
   );
 }

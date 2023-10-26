@@ -1,3 +1,5 @@
+"use client";
+
 import { useThemeProvider } from "@/app/providers/ThemeProvider";
 import Image from "next/image";
 import styles from "./header.module.css";
@@ -14,8 +16,8 @@ export const LightThemeButton = () => {
     >
       <Image
         className={styles.moon}
-        width={30}
-        height={30}
+        width={18}
+        height={18}
         alt="image dark"
         src="/moon-regular.svg"
       />

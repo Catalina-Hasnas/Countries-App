@@ -1,18 +1,12 @@
-.text {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
 .main {
   margin-inline: var(--app-margin);
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
+.filterResultsSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin-block: 2em;
+  flex-wrap: wrap;
 }

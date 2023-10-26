@@ -1,5 +1,3 @@
-"use client";
-
 import { DarkThemeButton } from "./DarkThemeButton";
 import { LightThemeButton } from "./LightThemeButton";
 

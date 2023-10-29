@@ -4,7 +4,9 @@ import { Header } from "./components/Header";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { Body } from "./components/Body";
 import { ReactNode } from "react";
-import { FilteredResults } from "./components/FilteredResults";
+import { Nunito_Sans } from "next/font/google";
+
+const font = Nunito_Sans({ subsets: ["latin"], weight: ["300", "600", "800"] });
 
 export const metadata: Metadata = {
   title: "Countries App",
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={font.className}>
       <ThemeProvider>
         <Body>
           <>

@@ -1,4 +1,4 @@
-import { CountriesList } from "@/app/components/CountriesList";
+import { CountryList } from "@/app/components/CountryList";
 import { CountryResponse } from "@/app/utils";
 
 type Region = "africa" | "america" | "asia" | "europe" | "oceania";
@@ -49,5 +49,5 @@ export default async function Page({
     ? getCountriesByRegionAndName(rawCountries, search)
     : rawCountries;
 
-  return <CountriesList countries={countries} />;
+  return <CountryList countries={countries} />;
 }

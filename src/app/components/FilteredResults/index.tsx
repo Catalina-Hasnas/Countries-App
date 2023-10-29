@@ -6,7 +6,7 @@ import styles from "./filterResults.module.css";
 export const FilteredResults = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className={styles.filterResultsSection}>
+      <section className={styles.filterResultsSection}>
         <Suspense
           fallback={
             <form action="#" role="search">
@@ -21,7 +21,7 @@ export const FilteredResults = ({ children }: { children: ReactNode }) => {
           <SearchBar />
         </Suspense>
         <Dropdown />
-      </div>
+      </section>
       {children}
     </>
   );

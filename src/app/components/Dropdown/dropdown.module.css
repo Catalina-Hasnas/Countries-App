@@ -33,7 +33,6 @@
   margin-block-start: 0.3em;
   padding-block: 0.5em;
   padding-inline: 1.5em;
-  list-style-type: none;
   border-radius: var(--app-border-radius);
 }
 

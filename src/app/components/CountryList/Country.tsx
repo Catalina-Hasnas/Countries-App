@@ -1,5 +1,6 @@
 import { CountryMapped } from "@/app/utils";
 import styles from "./countries.module.css";
+import Link from "next/link";
 
 export const Country = ({
   flagSrc,
@@ -16,7 +17,9 @@ export const Country = ({
       />
       <div className={styles.countryCardPresentationText}>
         <header>
-          <h1> {name} </h1>
+          <Link href={`/country/${name}`}>
+            <h1> {name} </h1>
+          </Link>
         </header>
         <p>
           <span> Population: </span> {population}

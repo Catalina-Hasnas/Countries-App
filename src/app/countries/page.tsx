@@ -1,4 +1,4 @@
-import { CountriesList } from "@/app/components/CountriesList";
+import { CountryList } from "@/app/components/CountryList";
 
 async function getCountries(name?: string) {
   const reqPath = name ? `/name/${name}` : "/all";
@@ -19,5 +19,5 @@ export default async function Page({
   const searchName = searchParams.search;
   const countries = await getCountries(searchName);
 
-  return <CountriesList countries={countries} />;
+  return <CountryList countries={countries} />;
 }

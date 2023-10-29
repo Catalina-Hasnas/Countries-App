@@ -1,0 +1,42 @@
+.countryDetailsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 4em;
+}
+
+.countryDetailsImage {
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+}
+
+.countryDetailsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  line-height: 1.5rem;
+  padding-block: 2em;
+}
+
+.countryDetailsInfoList {
+  column-count: 2;
+  column-gap: 2em;
+}
+
+.borderCountries {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.borderCountries ul {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5em;
+}
+
+.borderCountries li {
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  background-color: var(--elements);
+}

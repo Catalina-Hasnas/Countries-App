@@ -19,6 +19,7 @@
   gap: 0.3em;
   white-space: nowrap;
   font-size: 0.8em;
+  cursor: pointer;
 }
 
 .moon {

@@ -6,7 +6,7 @@ import {
 import { Country } from "./Country";
 import styles from "./countries.module.css";
 
-export const CountriesList = ({
+export const CountryList = ({
   countries: countriesRaw,
 }: {
   countries: CountryResponse[];

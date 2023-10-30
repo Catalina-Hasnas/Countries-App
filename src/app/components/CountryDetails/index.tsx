@@ -34,8 +34,7 @@ export const CountryDetails = ({
           <Image
             src={flagSrc}
             alt={commonName}
-            width={700}
-            height={500}
+            fill
             className={styles.countryDetailsImage}
           />
         </div>
@@ -72,22 +71,22 @@ export const CountryDetails = ({
               <span> Languages: </span> {languages}
             </li>
           </ul>
-          <div className={styles.borderCountries}>
-            <h3>Border Countries:</h3>
-            <nav>
-              <ul>
-                {borderCountries.map((borderCountry, index) => {
-                  return (
-                    <li className="appShadow" key={index}>
-                      <Link href={`/country/${borderCountry}`}>
-                        {borderCountry}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
+        </div>
+        <div className={styles.borderCountries}>
+          <h3>Border Countries:</h3>
+          <nav>
+            <ul>
+              {borderCountries.map((borderCountry, index) => {
+                return (
+                  <li className="appShadow" key={index}>
+                    <Link href={`/country/${borderCountry}`}>
+                      {borderCountry}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
       </article>
     </>

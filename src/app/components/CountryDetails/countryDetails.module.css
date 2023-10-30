@@ -1,25 +1,29 @@
 .countryDetailsContainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content;
+  grid-template-areas:
+    "image description "
+    "image border";
   gap: 2em;
 }
 
+.countryDetailsImageContainer {
+  grid-area: image;
+  position: relative;
+}
+
 .countryDetailsImage {
-  width: 100%;
-  height: auto;
-  min-width: 13em;
-  align-self: start;
-  flex: 1 1 0;
+  object-fit: contain;
 }
 
 .countryDetailsInfo {
+  grid-area: description;
   display: flex;
   flex-direction: column;
   gap: 2em;
   line-height: 1.5rem;
   padding-block: 2em;
-  flex: 1 1 0;
-  min-width: 13em;
 }
 
 .countryDetailsInfoList {
@@ -36,9 +40,18 @@
     column-count: unset;
     column-gap: unset;
   }
+  .countryDetailsContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(1em, 13em) auto auto;
+    grid-template-areas:
+      "image"
+      "description"
+      "border";
+  }
 }
 
 .borderCountries {
+  grid-area: border;
   display: flex;
   gap: 0.5em;
   align-items: center;

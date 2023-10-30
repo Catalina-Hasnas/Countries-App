@@ -1,11 +1,8 @@
-import {
-  CountryDetailsResponse,
-  CountryDetailsWithBorders,
-  mapCountryDetailsResponse,
-} from "./utils";
+import { CountryDetailsWithBorders, mapCountryDetailsResponse } from "./utils";
 import Image from "next/image";
 import styles from "./countryDetails.module.css";
 import Link from "next/link";
+import { BackButton } from "./BackButton";
 
 export const CountryDetails = ({
   country,
@@ -30,64 +27,69 @@ export const CountryDetails = ({
   } = mappedCountry;
 
   return (
-    <article className={styles.countryDetailsContainer}>
-      <Image
-        src={flagSrc}
-        alt={commonName}
-        width={700}
-        height={500}
-        style={{ width: "100%", height: "auto" }}
-      />
-      <section className={styles.countryDetailsInfo}>
-        <h2> {commonName} </h2>
-        <ul className={styles.countryDetailsInfoList}>
-          <li>
-            <h3> Native Name: </h3> {nativeNames}
-          </li>
-          <li>
-            <h3> Official Name: </h3> {officialName}
-          </li>
-          <li>
-            <h3> Population: </h3> {population}
-          </li>
-          <li>
-            <p>
-              <h3> Region: </h3> {region}
-            </p>
-          </li>
-          <li>
-            <h3> Subregion: </h3> {subregion}
-          </li>
-          <li>
-            <h3> Capital: </h3> {capitals}
-          </li>
-          <li>
-            <h3> Top Level Domain: </h3> {tld}
-          </li>
-          <li>
-            <h3> Currencies: </h3> {currencies}
-          </li>
-          <li>
-            <h3> Languages: </h3> {languages}
-          </li>
-        </ul>
-        <div className={styles.borderCountries}>
-          <h3>Border Countries:</h3>
-          <nav>
-            <ul>
-              {borderCountries.map((borderCountry, index) => {
-                return (
-                  <li className="appShadow" key={index}>
-                    <Link href={`/country/${borderCountry}`}>
-                      {borderCountry}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+    <>
+      <BackButton />
+      <article className={styles.countryDetailsContainer}>
+        <div className={styles.countryDetailsImageContainer}>
+          <Image
+            src={flagSrc}
+            alt={commonName}
+            width={700}
+            height={500}
+            className={styles.countryDetailsImage}
+          />
         </div>
-      </section>
-    </article>
+        <div className={styles.countryDetailsInfo}>
+          <h2> {commonName} </h2>
+          <ul className={styles.countryDetailsInfoList}>
+            <li>
+              <span> Native Name: </span> {nativeNames}
+            </li>
+            <li>
+              <span> Official Name: </span> {officialName}
+            </li>
+            <li>
+              <span> Population: </span> {population}
+            </li>
+            <li>
+              <p>
+                <span> Region: </span> {region}
+              </p>
+            </li>
+            <li>
+              <span> Subregion: </span> {subregion}
+            </li>
+            <li>
+              <span> Capital: </span> {capitals}
+            </li>
+            <li>
+              <span> Top Level Domain: </span> {tld}
+            </li>
+            <li>
+              <span> Currencies: </span> {currencies}
+            </li>
+            <li>
+              <span> Languages: </span> {languages}
+            </li>
+          </ul>
+          <div className={styles.borderCountries}>
+            <h3>Border Countries:</h3>
+            <nav>
+              <ul>
+                {borderCountries.map((borderCountry, index) => {
+                  return (
+                    <li className="appShadow" key={index}>
+                      <Link href={`/country/${borderCountry}`}>
+                        {borderCountry}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </article>
+    </>
   );
 };

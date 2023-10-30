@@ -5,7 +5,17 @@ import {
 } from "@/app/components/CountryDetails/utils";
 import { CountryResponse } from "@/app/utils";
 
-const getCountryByName = async (name: string) => {
+const getCountriesByAlphaCodes = async (alphaCodes: string) => {
+  const res = await fetch(
+    `https://restcountries.com/v3.1/alpha?codes=${alphaCodes}&fields=name`
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+};
+
+const getCountryByNameWithBorders = async (name: string) => {
   const res = await fetch(
     `https://restcountries.com/v3.1/name/${name}?fullText=true&fields=name,capital,population,region,subregion,tld,currencies,languages,flags,borders`
   );
@@ -13,21 +23,25 @@ const getCountryByName = async (name: string) => {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
-};
+  const country: CountryDetailsResponse[] = await res.json();
 
-const getCountriesByAlphaCodes = async (alphaCodes: string) => {
-  const res = await fetch(
-    `https://restcountries.com/v3.1/alpha?codes=${alphaCodes}&fields=name`
-  );
-  if (!res.ok) {
-    return [];
+  const borderCountriesAlphaCodes = country[0].borders?.join(",") || "";
+  let borderCountries: Pick<CountryDetailsResponse, "name">[] = [];
+
+  if (borderCountriesAlphaCodes) {
+    borderCountries = await getCountriesByAlphaCodes(borderCountriesAlphaCodes);
   }
-  return res.json();
+
+  const countryWithBorderNames: CountryDetailsWithBorders = {
+    ...country[0],
+    borderCountries,
+  };
+
+  return countryWithBorderNames;
 };
 
 export async function generateStaticParams() {
-  const res = await fetch("https://restcountries.com/v3.1/all");
+  const res = await fetch("https://restcountries.com/v3.1/all", { next: {} });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -43,17 +57,9 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { name: string } }) {
   const { name } = params;
 
-  const country: CountryDetailsResponse[] = await getCountryByName(name);
+  const country: CountryDetailsWithBorders = await getCountryByNameWithBorders(
+    name
+  );
 
-  const borderCountriesAlphaCodes = country[0].borders?.join(",") || "";
-
-  const borderCountries: Pick<CountryDetailsResponse, "name">[] =
-    await getCountriesByAlphaCodes(borderCountriesAlphaCodes);
-
-  const countryWithBorderNames: CountryDetailsWithBorders = {
-    ...country[0],
-    borderCountries,
-  };
-
-  return <CountryDetails country={countryWithBorderNames} />;
+  return <CountryDetails country={country} />;
 }

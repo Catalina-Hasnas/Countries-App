@@ -1,13 +1,15 @@
 .countryDetailsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-  gap: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
 }
 
 .countryDetailsImage {
-  background-size: contain;
-  background-repeat: no-repeat;
-  aspect-ratio: 1;
+  width: 100%;
+  height: auto;
+  min-width: 13em;
+  align-self: start;
+  flex: 1 1 0;
 }
 
 .countryDetailsInfo {
@@ -16,6 +18,8 @@
   gap: 2em;
   line-height: 1.5rem;
   padding-block: 2em;
+  flex: 1 1 0;
+  min-width: 13em;
 }
 
 .countryDetailsInfoList {
@@ -23,20 +27,53 @@
   column-gap: 2em;
 }
 
+.countryDetailsInfoList span {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 64em) {
+  .countryDetailsInfoList {
+    column-count: unset;
+    column-gap: unset;
+  }
+}
+
 .borderCountries {
   display: flex;
   gap: 0.5em;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.borderCountries h3 {
+  font-size: 1rem;
 }
 
 .borderCountries ul {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5em;
 }
 
 .borderCountries li {
-  padding-block: 0.5em;
-  padding-inline: 1em;
+  position: relative;
+  width: 8rem;
+  padding-block: 1.5em;
   background-color: var(--elements);
+}
+
+.borderCountries li a {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.backButton {
+  margin-block: 3rem;
+  padding-block: 0.8em;
+  padding-inline: 2.2em;
+  background-color: var(--elements);
+  border-radius: var(--app-border-radius);
 }

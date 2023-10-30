@@ -12,24 +12,27 @@ export const Country = ({
   return (
     <article className={styles.countryCard}>
       <div
+        role="img"
         className={styles.countryCardImage}
         style={{ backgroundImage: `url(${flagSrc})` }}
       />
       <div className={styles.countryCardPresentationText}>
         <header>
-          <Link href={`/country/${name}`}>
-            <h1> {name} </h1>
-          </Link>
+          <h2>
+            <Link href={`/country/${name}`}>{name}</Link>
+          </h2>
         </header>
-        <p>
-          <span> Population: </span> {population}
-        </p>
-        <p>
-          <span> Region: </span> {region}
-        </p>
-        <p>
-          <span> Capital: </span> {capital}
-        </p>
+        <ul>
+          <li>
+            <span> Population: </span> {population}
+          </li>
+          <li>
+            <span> Region: </span> {region}
+          </li>
+          <li>
+            <span> Capital: </span> {capital}
+          </li>
+        </ul>
       </div>
     </article>
   );

@@ -21,7 +21,7 @@
   --app-margin: var(--app-margin-desktop);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 64em) {
   :root {
     --app-margin: var(--app-margin-mobile);
   }

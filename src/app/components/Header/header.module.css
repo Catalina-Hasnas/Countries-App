@@ -26,7 +26,7 @@
   transform: rotate(350deg);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 64em) {
   .header {
     font-size: 0.8rem;
   }

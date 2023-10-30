@@ -1,0 +1,94 @@
+* {
+  /* Light theme */
+  --background-light: hsl(0, 0%, 98%);
+  --elements-light: hsl(0, 0%, 100%);
+  --text-light: hsl(200, 15%, 8%);
+  --text-gray-light: hsla(200, 15%, 8%, 0.7);
+
+  /* Dark theme */
+  --background-dark: hsl(207, 26%, 17%);
+  --elements-dark: hsl(209, 23%, 22%);
+  --text-dark: hsl(0, 0%, 100%);
+
+  --app-margin-desktop: 4.5rem;
+  --app-margin-mobile: 1.5rem;
+  --app-border-radius: 0.3rem;
+}
+
+:root {
+  --app-margin: var(--app-margin-desktop);
+}
+
+@media only screen and (max-width: 64em) {
+  :root {
+    --app-margin: var(--app-margin-mobile);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: var(--background-dark);
+    --elements: var(--elements-dark);
+    --text: var(--text-dark);
+    --fill: var(--text-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: var(--background-light);
+    --elements: var(--elements-light);
+    --text: var(--text-light);
+    --fill: var(--text-gray-light);
+  }
+}
+
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --elements: var(--elements-dark);
+  --text: var(--text-dark);
+  --fill: var(--text-dark);
+}
+
+[data-theme="light"] {
+  --background: var(--background-light);
+  --elements: var(--elements-light);
+  --text: var(--text-light);
+  --fill: var(--text-gray-light);
+}
+
+.dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .light {
+    display: none;
+  }
+
+  .dark {
+    display: unset;
+  }
+}
+
+[data-theme="dark"] .light {
+  display: none;
+}
+
+[data-theme="dark"] .dark {
+  display: unset;
+}
+
+[data-theme="light"] .light {
+  display: unset;
+}
+
+[data-theme="light"] .dark {
+  display: none;
+}
+
+.appShadow {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+}

@@ -1,10 +1,12 @@
-import "./css/globals.css";
+import "../css/globals.css";
 import type { Metadata } from "next";
-import { Header } from "./components/Header";
-import { ThemeProvider } from "./providers/ThemeProvider";
-import { Body } from "./components/Body";
+
 import { ReactNode } from "react";
 import { Nunito_Sans } from "next/font/google";
+
+import { Header } from "@/components/Header";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { Body } from "@/components/Body";
 
 const font = Nunito_Sans({ subsets: ["latin"], weight: ["300", "600", "800"] });
 

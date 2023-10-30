@@ -1,0 +1,39 @@
+.countryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.25rem, 1fr));
+  gap: 4em;
+}
+
+.countryCard {
+  background-color: var(--elements);
+  border-radius: var(--app-border-radius);
+}
+
+.countryCardImageContainer {
+  position: relative;
+  min-height: 13em;
+}
+
+.countryCardImage {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: var(--app-border-radius);
+  border-top-right-radius: var(--app-border-radius);
+}
+
+.countryCardPresentationText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em;
+  font-size: 0.875rem;
+}
+
+.countryCardPresentationText header h2 {
+  font-size: 1rem;
+}
+
+.countryCardPresentationText span {
+  font-weight: 600;
+}

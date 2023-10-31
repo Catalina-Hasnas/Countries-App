@@ -73,6 +73,11 @@
   width: 8rem;
   padding-block: 1.5em;
   background-color: var(--elements);
+  transition: all 300ms;
+}
+
+.borderCountries li:hover {
+  background-color: var(--accent);
 }
 
 .borderCountries li a {
@@ -84,9 +89,27 @@
 }
 
 .backButton {
+  display: grid;
+  grid-template-columns: 20px 5px auto;
   margin-block: 3rem;
   padding-block: 0.8em;
   padding-inline: 2.2em;
   background-color: var(--elements);
   border-radius: var(--app-border-radius);
+  transition: grid-template-columns 300ms, background-color 300ms;
+}
+
+.backButton span {
+  grid-column: 3;
+}
+
+.backButton:hover {
+  background-color: var(--accent);
+  grid-template-columns: 15px 10px auto;
+}
+
+.backButton::before {
+  content: "\2190";
+  justify-self: end;
+  padding-inline-end: 0.5em;
 }

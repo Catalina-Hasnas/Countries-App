@@ -13,7 +13,7 @@ export const DarkThemeButton = () => {
         toggleIsDarkTheme(false);
       }}
     >
-      <Image width={15} height={15} alt="sun" src="/sun-solid.svg" />
+      <Image width={18} height={18} alt="sun" src="/sunny-outline.svg" />
       Light Mode
     </button>
   );

@@ -1,7 +1,7 @@
-import { CountryMapped } from "@/utils";
 import styles from "../countries.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { CountryMapped } from "../types";
 
 export const Country = ({
   flagSrc,
@@ -11,7 +11,7 @@ export const Country = ({
   capital,
 }: CountryMapped) => {
   return (
-    <article className={styles.countryCard}>
+    <article className={`${styles.countryCard} appShadow`}>
       <div className={styles.countryCardImageContainer}>
         <Image
           src={flagSrc}

@@ -3,16 +3,19 @@
   --background-light: hsl(0, 0%, 98%);
   --elements-light: hsl(0, 0%, 100%);
   --text-light: hsl(200, 15%, 8%);
-  --text-gray-light: hsla(200, 15%, 8%, 0.7);
+  --accent-light: hsla(var(--text-gray), 0.1);
 
   /* Dark theme */
   --background-dark: hsl(207, 26%, 17%);
   --elements-dark: hsl(209, 23%, 22%);
   --text-dark: hsl(0, 0%, 100%);
+  --accent-dark: hsl(208, 23%, 29%);
 
   --app-margin-desktop: 4.5rem;
   --app-margin-mobile: 1.5rem;
   --app-border-radius: 0.3rem;
+
+  --text-gray: 200, 15%, 8%;
 }
 
 :root {
@@ -31,6 +34,7 @@
     --background: var(--background-dark);
     --elements: var(--elements-dark);
     --text: var(--text-dark);
+    --accent: var(--accent-dark);
     --fill: var(--text-dark);
   }
 }
@@ -41,7 +45,8 @@
     --background: var(--background-light);
     --elements: var(--elements-light);
     --text: var(--text-light);
-    --fill: var(--text-gray-light);
+    --accent: var(--accent-light);
+    --fill: hsla(var(--text-gray), 0.7);
   }
 }
 
@@ -49,6 +54,7 @@
   --background: var(--background-dark);
   --elements: var(--elements-dark);
   --text: var(--text-dark);
+  --accent: var(--accent-dark);
   --fill: var(--text-dark);
 }
 
@@ -56,7 +62,8 @@
   --background: var(--background-light);
   --elements: var(--elements-light);
   --text: var(--text-light);
-  --fill: var(--text-gray-light);
+  --accent: var(--accent-light);
+  --fill: hsla(var(--text-gray), 0.7);
 }
 
 .dark {

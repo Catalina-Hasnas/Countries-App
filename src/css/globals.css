@@ -19,7 +19,7 @@ button {
   background-color: inherit;
   color: inherit;
   font-family: inherit;
-  border: 0;
+  border: none;
 }
 
 a {
@@ -29,6 +29,7 @@ a {
 
 ul {
   list-style-type: none;
+  line-height: 1.5;
 }
 
 main {

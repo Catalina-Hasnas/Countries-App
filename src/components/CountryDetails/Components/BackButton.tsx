@@ -14,7 +14,7 @@ export const BackButton = () => {
         router.back();
       }}
     >
-      &#8592; &#xa0; Back
+      <span>Back</span>
     </button>
   );
 };

@@ -24,7 +24,7 @@
 }
 
 .searchBar input:focus {
-  outline: none;
+  outline: 2px solid var(--accent);
 }
 
 .searchBar input::placeholder {

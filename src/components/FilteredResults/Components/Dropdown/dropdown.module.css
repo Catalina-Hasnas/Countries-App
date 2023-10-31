@@ -18,7 +18,7 @@
 }
 
 .dropdown button:focus {
-  outline: none;
+  outline: 2px solid var(--accent);
 }
 
 .dropdownContent {
@@ -31,15 +31,19 @@
   overflow: auto;
   z-index: 1;
   margin-block-start: 0.3em;
-  padding-block: 0.5em;
-  padding-inline: 1.5em;
   border-radius: var(--app-border-radius);
+  padding-block: 0.3em;
+}
+
+.dropdownContent li {
+  padding-block: 0.2em;
+  padding-inline: 1.5em;
+}
+
+.dropdownContent li:hover {
+  background-color: var(--accent);
 }
 
 .dropdownIconColor {
   fill: var(--text);
 }
-
-/* .dropdown a:hover {
-  background-color: #ddd;
-} */

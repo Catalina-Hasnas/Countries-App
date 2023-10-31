@@ -14,20 +14,7 @@ export const CountryDetails = ({
 }) => {
   const mappedCountry = mapCountryDetailsResponse(country);
 
-  const {
-    commonName,
-    officialName,
-    nativeNames,
-    capitals,
-    currencies,
-    flagSrc,
-    languages,
-    population,
-    region,
-    subregion,
-    tld,
-    borderCountries,
-  } = mappedCountry;
+  const { commonName, flagSrc, borderCountries } = mappedCountry;
 
   return (
     <>

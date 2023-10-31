@@ -54,6 +54,23 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { name: string };
+}) {
+  const { name } = params;
+
+  const country: CountryDetailsWithBorders = await getCountryByNameWithBorders(
+    name
+  );
+
+  return {
+    title: `${country.name.common}`,
+    icons: { icon: country.flags.svg },
+  };
+}
+
 export default async function Page({ params }: { params: { name: string } }) {
   const { name } = params;
 

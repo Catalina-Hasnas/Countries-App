@@ -26,12 +26,36 @@
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  padding: 1em;
+  padding-block: 1em;
+  padding-inline: 3em;
   font-size: 0.875rem;
+}
+
+.countryCardPresentationText a {
+  position: relative;
+}
+
+.countryCardPresentationText a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--text);
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.countryCardPresentationText a:hover::after,
+.countryCardPresentationText a:focus::after {
+  transform: scale(1);
 }
 
 .countryCardPresentationText header h2 {
   font-size: 1rem;
+  font-stretch: expanded;
 }
 
 .countryCardPresentationText span {

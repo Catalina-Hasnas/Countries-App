@@ -14,13 +14,7 @@ export const LightThemeButton = () => {
         toggleIsDarkTheme(true);
       }}
     >
-      <Image
-        className={styles.moon}
-        width={18}
-        height={18}
-        alt="image dark"
-        src="/moon-regular.svg"
-      />
+      <Image width={18} height={18} alt="image dark" src="/moon-outline.svg" />
       Dark Mode
     </button>
   );

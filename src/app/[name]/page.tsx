@@ -71,6 +71,8 @@ export async function generateMetadata({
   };
 }
 
+export const dynamicParams = false;
+
 export default async function Page({ params }: { params: { name: string } }) {
   const { name } = params;
 

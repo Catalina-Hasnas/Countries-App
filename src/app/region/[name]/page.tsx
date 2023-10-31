@@ -32,6 +32,8 @@ const getCountriesByRegionAndName = (
   });
 };
 
+export const dynamicParams = false;
+
 export default async function Page({
   params,
   searchParams,

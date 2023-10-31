@@ -7,7 +7,11 @@ async function getCountries(name?: string) {
     `https://restcountries.com/v3.1${reqPath}?fields=name,capital,population,region,flags`
   );
   if (!res.ok) {
-    return [];
+    if (res.status === 404) {
+      return [];
+    }
+
+    throw new Error("Failed to fetch data :(");
   }
   return res.json();
 }

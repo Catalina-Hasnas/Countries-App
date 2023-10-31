@@ -10,6 +10,8 @@ import { Body } from "@/components/Body";
 
 const font = Nunito_Sans({ subsets: ["latin"], weight: ["300", "600", "800"] });
 
+export const dynamicParams = false;
+
 export const metadata: Metadata = {
   title: "Countries App",
   description: "Get information about countries",

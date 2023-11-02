@@ -43,9 +43,9 @@ export default async function Page({
 }) {
   const { name } = params;
 
-  const rawCountries = await getCountriesByRegion(name);
-
   const { search } = searchParams;
+
+  const rawCountries = await getCountriesByRegion(name);
 
   const countries = search
     ? getCountriesByRegionAndName(rawCountries, search)

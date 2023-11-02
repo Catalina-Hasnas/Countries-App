@@ -6,6 +6,9 @@ import {
 import { CountryResponse } from "@/components/CountryList/types";
 
 const getCountriesByAlphaCodes = async (alphaCodes: string) => {
+  if (!alphaCodes) {
+    return [];
+  }
   const res = await fetch(
     `https://restcountries.com/v3.1/alpha?codes=${alphaCodes}&fields=name`
   );
@@ -26,11 +29,10 @@ const getCountryByNameWithBorders = async (name: string) => {
   const country: CountryDetailsResponse[] = await res.json();
 
   const borderCountriesAlphaCodes = country[0].borders?.join(",") || "";
-  let borderCountries: Pick<CountryDetailsResponse, "name">[] = [];
 
-  if (borderCountriesAlphaCodes) {
-    borderCountries = await getCountriesByAlphaCodes(borderCountriesAlphaCodes);
-  }
+  const borderCountries = await getCountriesByAlphaCodes(
+    borderCountriesAlphaCodes
+  );
 
   const countryWithBorderNames: CountryDetailsWithBorders = {
     ...country[0],
@@ -41,7 +43,7 @@ const getCountryByNameWithBorders = async (name: string) => {
 };
 
 export async function generateStaticParams() {
-  const res = await fetch("https://restcountries.com/v3.1/all", { next: {} });
+  const res = await fetch("https://restcountries.com/v3.1/all");
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

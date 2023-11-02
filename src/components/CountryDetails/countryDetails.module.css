@@ -3,9 +3,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: min-content;
   grid-template-areas:
-    "image description "
+    "image description"
     "image border";
   gap: 2em;
+  padding-block-end: 0.5em;
 }
 
 .countryDetailsImageContainer {

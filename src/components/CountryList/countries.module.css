@@ -45,7 +45,7 @@
   background-color: var(--text);
   transform: scale(0);
   transform-origin: center;
-  transition: opacity 300ms, transform 300ms;
+  transition: transform 300ms;
 }
 
 .countryCardPresentationText a:hover::after,

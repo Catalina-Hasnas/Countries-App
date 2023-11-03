@@ -44,6 +44,10 @@
   background-color: var(--accent);
 }
 
+.dropdownContent li a {
+  display: block;
+}
+
 .dropdownIconColor {
   fill: var(--text);
 }
